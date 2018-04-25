@@ -42,6 +42,9 @@ class Dog
 
   def self.find_or_create_by(hash)
     binding.pry
+    sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
+    dog = DB[:conn].execute(sql, hash[:name], breed[:breed])
+
   end
 
   def self.new_from_db
