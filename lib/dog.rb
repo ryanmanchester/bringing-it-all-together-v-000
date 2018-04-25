@@ -35,7 +35,7 @@ class Dog
     SELECT * FROM dogs
     WHERE id = ?
     SQL
-    
+
     result = DB[:conn].execute(sql, id).flatten
     dog = Dog.new(id: result[0], name: result[1], breed: result[2])
     dog.save
