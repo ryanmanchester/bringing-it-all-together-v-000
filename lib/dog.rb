@@ -57,6 +57,9 @@ class Dog
     dog
   end
 
+  def self.find_by_name(name)
+  end
+
   def save
     if self.id
       self.update
