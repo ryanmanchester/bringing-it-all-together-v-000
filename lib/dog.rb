@@ -41,7 +41,6 @@ class Dog
 
   def self.find_or_create_by(hash)
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
-    #binding.pry
     dog = DB[:conn].execute(sql, hash[:name], hash[:breed])
     if !dog.empty?
       dog_data = dog[0]
