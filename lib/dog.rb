@@ -36,7 +36,7 @@ class Dog
     WHERE id = ?
     LIMIT 1
     SQL
-
+binding.pry
     DB[:conn].execute(sql, id).map {|row| self.create(row)}.first
     #dog = Dog.create(id: result[0], name: result[1], breed: result[2])
 
