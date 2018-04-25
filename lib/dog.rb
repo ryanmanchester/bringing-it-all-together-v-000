@@ -30,18 +30,18 @@ class Dog
     dog
   end
 
-#   def self.find_by_id(id)
-#     sql = <<-SQL
-#     SELECT * FROM dogs
-#     WHERE id = ?
-#     LIMIT 1
-#     SQL
-# binding.pry
-#     DB[:conn].execute(sql, id).map do |row|
-#       self.create(row)
-    #dog = Dog.create(id: result[0], name: result[1], breed: result[2])
+  def self.find_by_id(id)
+    sql = <<-SQL
+    SELECT * FROM dogs
+    WHERE id = ?
+    LIMIT 1
+    SQL
+binding.pry
+    DB[:conn].execute(sql, id).map do |row|
+      self.create(row)
+    dog = Dog.create(id: result[0], name: result[1], breed: result[2])
 
-  #end
+  end
 
   def self.new_from_db
   end
