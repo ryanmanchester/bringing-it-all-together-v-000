@@ -37,9 +37,9 @@ class Dog
 
     SQL
 #binding.pry
-    DB[:conn].execute(sql, id).map do |row|
-      self.create(row)
-    dog = Dog.create(id: result[0], name: result[1], breed: result[2])
+    result = DB[:conn].execute(sql, id)[0]
+
+    Dog.create(id: result[0], name: result[1], breed: result[2])
 
   end
 
