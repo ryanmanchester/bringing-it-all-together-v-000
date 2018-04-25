@@ -49,7 +49,6 @@ class Dog
     else
       dog = self.create(hash)
     end
-
   end
 
   def self.new_from_db(row)
