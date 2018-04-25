@@ -34,9 +34,9 @@ class Dog
     sql = <<-SQL
     SELECT * FROM dogs
     WHERE id = ?
-    LIMIT 1
+
     SQL
-binding.pry
+#binding.pry
     DB[:conn].execute(sql, id).map do |row|
       self.create(row)
     dog = Dog.create(id: result[0], name: result[1], breed: result[2])
