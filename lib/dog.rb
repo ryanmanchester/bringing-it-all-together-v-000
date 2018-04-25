@@ -31,13 +31,14 @@ class Dog
   end
 
   def self.find_by_id(id)
-
     sql = <<-SQL
     SELECT * FROM dogs
     WHERE id = ?
     SQL
-    binding.pry
-    DB[:conn].execute(sql, id)
+    
+    result = DB[:conn].execute(sql, id).flatten
+    dog = Dog.new(id: result[0], name: result[1], breed: result[2])
+    dog.save
   end
 
   def save
