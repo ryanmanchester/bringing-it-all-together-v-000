@@ -27,7 +27,7 @@ class Dog
   def self.create(attributes)
     dog = Dog.new(name: attributes[:name], breed: attributes[:breed])
     dog.save
-    
+
   end
 
   def self.find_by_id(id)
@@ -54,7 +54,7 @@ class Dog
   end
 
   def self.new_from_db(row)
-    binding.pry
+    #binding.pry
   end
 
   def save
