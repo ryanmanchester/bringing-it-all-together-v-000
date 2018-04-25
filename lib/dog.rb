@@ -26,9 +26,9 @@ class Dog
 
   def self.create(attributes)
     binding.pry
-    new_dog = Dog.new(name, breed)
-    new_dog.save
-    new_dog
+    dog = Dog.new(name: attributes[:name], breed: attributes[:breed])
+    dog.save
+    dog
   end
 
   def save
