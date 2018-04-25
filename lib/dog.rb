@@ -27,7 +27,6 @@ class Dog
   def self.create(attributes)
     dog = Dog.new(name: attributes[:name], breed: attributes[:breed])
     dog.save
-
   end
 
   def self.find_by_id(id)
