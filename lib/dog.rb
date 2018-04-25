@@ -36,8 +36,8 @@ class Dog
     WHERE id = ?
     SQL
 
-    result = DB[:conn].execute(sql, id).flatten
-    dog = Dog.create(id: result[0], name: result[1], breed: result[2])
+    DB[:conn].execute(sql, id).map {|row| self.create(row)}
+    #dog = Dog.create(id: result[0], name: result[1], breed: result[2])
 
   end
 
